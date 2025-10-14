@@ -30,12 +30,17 @@
     </style>
 </head>
 <body>
-<?php include("header.php");
+<?php
+$header_var = "header variable";
+$sidebar_var = "sidebar variable";
+$footer_var = "footer variable";
+$content_var = "content variable";
+include __DIR__ . "/header.php" ;
 echo "<div id=\"main\">";
-        include("sidebar.php");
-        include("content.php");
+        require_once __DIR__ . "/sidebar.php" ;
+        include __DIR__ . "/content.php" ;
 echo "</div>";
-include("footer.php");
+include_once __DIR__ . "/footer.php" ;
 ?>
 </body>
 </html>
