@@ -1,7 +1,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>1 часть домашнего задания</title>
+    <title>3. Основы разработки</title>
     <style>
         body {
             display: flex;
