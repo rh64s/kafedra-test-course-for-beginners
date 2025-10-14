@@ -42,5 +42,16 @@ echo "<div id=\"main\">";
 echo "</div>";
 include_once __DIR__ . "/footer.php" ;
 ?>
+
+<div>
+    <h4>Изучите официальную документацию по include и изучите как можно использовать выражения вида </h4>
+    <p>$var = include 'file.php'</p>
+    <p>это выражение такого вида можно использовать, если в файле 'file.php'
+        прописан скрипт, возвращающий что-то, например:</p>
+    <?php
+        echo "<&nbsp?php return 'hello, world';?>";
+    ?>
+</div>
+
 </body>
 </html>
