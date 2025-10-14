@@ -1,7 +1,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Переменные в PHP</title>
+    <title>Функции в PHP</title>
 </head>
 <body>
 <h1>3. Основы разработки</h1>
