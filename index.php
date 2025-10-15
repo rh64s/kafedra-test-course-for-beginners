@@ -4,24 +4,34 @@
     <title>3. Основы разработки</title>
 </head>
 <body>
-<p>С помощью цикла while создайте массив, содержащий чётные числа от 345 до 357. Затем выведите элементы массива с помощью цикла foreach.</p>
+<p>перевести строку в верхний регистр</p>
 <?php
-$my_array = [];
-$current_num = 344;
-while (++$current_num and $current_num <= 357) {
-    $my_array[] = $current_num;
-}
-foreach ($my_array as $num) {
-    echo $num, ", ";
-}
+//echo strtoupper(fgets(STDIN));
+$any_string = "string";
+echo "string", "<br>";
+echo strtoupper($any_string);
 ?>
-
-<p>Запустите следующий код: while (true) {
-    echo 1;
-    }, к чему это привело?</p>
-<?php //while(true) {echo 1;}?>
-<p>это приводит к заполнению документа "1" до тех пор, пока процесс не закончится принудительно</p>
-<br>
-<p>если установить max_execution_time = 1, то php будет думать, что код должен выполниться за секунду. но с этим циклом код будет выполняться до бесконечности, поэтому мы получим ошибку</p>
+<p>развернуть строку (развернуть порядок слов)</p>
+<?php
+$any_string = "this is my string";
+$words = [];
+$current_word = '';
+for ($i = 0;  $i < mb_strlen($any_string); $i++) {
+    if ($any_string[$i] != ' ') {
+        $current_word = $current_word . $any_string[$i];
+    } else {
+        $words[] = $current_word;
+        $current_word = '';
+    }
+}
+if ($current_word != '') {
+    $words[] = $current_word;
+}
+$current_word = '';
+for ($i = count($words)-1; $i >= 0; $i--) {
+    $current_word .= $words[$i] . " ";
+}
+echo $current_word;
+?>
 </body>
 </html>
