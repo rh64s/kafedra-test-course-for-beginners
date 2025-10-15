@@ -1,9 +1,3 @@
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>3. Основы разработки</title>
-</head>
-<body>
 <p>напишите функцию, принимающую на вход 2 аргумента - массив и какое-либо значение. Функция возвращает true, если переданное значение присутствует в массиве и false - если нет</p>
 <?php
 function is_exists($any_array, string $key ){
@@ -70,5 +64,3 @@ foreach ($any_array as $value) {
     echo $value, " ";
 }
 ?>
-</body>
-</html>
