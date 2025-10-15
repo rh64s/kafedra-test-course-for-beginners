@@ -1,9 +1,3 @@
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>3. Основы разработки</title>
-</head>
-<body>
 <p>Есть массив чисел – [1, 3, 2]. Отсортируйте их от меньшего к большему и преобразуйте в строку, в которой значения элементов массива разделяются двоеточиями. В результате должна получиться строка “1:2:3”.</p>
 <?php
 function sort_array($array) {
@@ -56,5 +50,3 @@ function clear_copies($string_nums) {
 $nums = "1 1 2 1 3 4 5 6 1 1 2 5 3";
 echo to_string(clear_copies($nums), " ");
 ?>
-</body>
-</html>
