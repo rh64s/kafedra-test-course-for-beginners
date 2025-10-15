@@ -64,7 +64,7 @@ function fubonacci($n) {
     return $any_array;
 }
 
-$n = 10;
+$n = 12;
 $any_array = fubonacci($n);
 foreach ($any_array as $value) {
     echo $value, " ";
