@@ -1,13 +1,20 @@
 <?php
-require __DIR__ . ("/setCookies.php");
-?>
 
-<html lang="ru">
+require __DIR__ . '/auth.php';
+$login = getUserLogin();
+
+?>
+<html>
 <head>
-    <title>5. Взаимодействие с пользователем</title>
+    <title>Главная страница</title>
 </head>
 <body>
-    <p>если добавить time() + 20 в качестве 3 аргумента (срок), то получим, что Cookie будет действительно, пока не истечет время 20 секунд</p>
-    <img src="screen.png">
+<?php if ($login === null): ?>
+    <a href="/login.php">Авторизуйтесь</a>
+<?php else: ?>
+    Добро пожаловать, <?= $login ?>
+    <br>
+    <a href="/logout.php">Выйти</a>
+<?php endif; ?>
 </body>
 </html>
