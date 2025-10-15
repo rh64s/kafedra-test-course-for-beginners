@@ -4,71 +4,57 @@
     <title>3. Основы разработки</title>
 </head>
 <body>
-<p>напишите функцию, принимающую на вход 2 аргумента - массив и какое-либо значение. Функция возвращает true, если переданное значение присутствует в массиве и false - если нет</p>
+<p>Есть массив чисел – [1, 3, 2]. Отсортируйте их от меньшего к большему и преобразуйте в строку, в которой значения элементов массива разделяются двоеточиями. В результате должна получиться строка “1:2:3”.</p>
 <?php
-function is_exists($any_array, string $key ){
-    foreach ($any_array as $value) {
-        if ($value === $key) {
-            return true;
+function sort_array($array) {
+    for ($i = 0; $i < count($array); $i++) {
+        for ($j = 0; $j < count($array); $j++) {
+            if ($array[$i] < $array[$j]) {
+                $temp = $array[$i];
+                $array[$i] = $array[$j];
+                $array[$j] = $temp;
+            }
         }
     }
-    return false;
+    return $array;
 }
-$any_array = ["item1", "item2", "item3", "item4", "item5"];
-$key = "item5";
-echo is_exists($any_array, $key);
+function to_string($array, $separator) {
+    $line = '';
+    for ($i = 0; $i < count($array); $i++) {
+        if($i == count($array) - 1) {
+            $line .= $array[$i];
+            break;
+        }
+        $line .= $array[$i] . $separator;
+    }
+    return $line;
+}
+$any_array = [1,3,2];
+echo (to_string(sort_array($any_array), ":"));
 ?>
 <br>
-
-<p>напишите функцию, принимающую на вход 2 аргумента - массив и какое-либо значение. Функция возвращает число вхождений числа в массив. Например: для массива [1, 2, 1, 3] число вхождений числа "1" будет равно двум.</p>
+<p>Есть массив чисел – [1, 2, 3, 4, 5]. Получите с помощью одной функции массив, в котором будут элементы исходного с 1-го элемента по 3-й. В результате должен получиться массив с числами [2, 3, 4].</p>
 <?php
-function how_much($any_array, string $key ){
-    $count = 0;
-    foreach ($any_array as $value) {
-        if ($value === $key) {
-            $count++;
+$any_array = [1,2,3,4,5];
+echo (to_string(array_slice($any_array, 1, 3), ", "));
+?>
+<br>
+<p>На вход дана строка с числами, разделенными пробелами.
+    Удалите все повторы чисел. Выведите их в любом порядке, разделив пробелами.
+</p>
+<?php
+function clear_copies($string_nums) {
+    $array_nums = explode(" ", $string_nums);
+    $array_new = [];
+    foreach ($array_nums as $num) {
+        if(!in_array($num, $array_new)) {
+            $array_new[] = $num;
         }
     }
-    return $count;
+    return $array_new;
 }
-$any_array = ["item1", "item2", "item3", "item4", "item5", "item2", "item2", "item5"];
-//здесь 3 "item2"
-$key = "item2";
-echo how_much($any_array, $key);
-?>
-<br>
-<p>четные числа. найти и вывести четные числа в массиве</p>
-<?php
-function find_2($any_array) {
-    $new_array = [];
-    foreach ($any_array as $value) {
-        if ($value % 2 === 0) {
-            $new_array[] = $value;
-        }
-    }
-    return $new_array;
-}
-$any_array = [1,2,3,4,5,6,7,8,9,10];
-foreach (find_2($any_array) as $value) {
-    echo $value, " ";
-}
-?>
-<br>
-<p>числа Фибоначчи</p>
-<?php
-function fubonacci($n) {
-    $any_array = [0,1];
-    for ($i = 1; $i < $n; $i++) {
-        $any_array[] = $any_array[$i - 1] + $any_array[$i];
-    }
-    return $any_array;
-}
-
-$n = 12;
-$any_array = fubonacci($n);
-foreach ($any_array as $value) {
-    echo $value, " ";
-}
+$nums = "1 1 2 1 3 4 5 6 1 1 2 5 3";
+echo to_string(clear_copies($nums), " ");
 ?>
 </body>
 </html>
