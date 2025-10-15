@@ -1,9 +1,3 @@
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>5. Взаимодействие</title>
-</head>
-<body>
 <p>На вход подается строка из чисел, разделенных пробелами.
     Найдите все числа, встречающиеся 2 и более раз. Выведите их в любом порядке, разделяя пробелами.</p>
 <?php
@@ -46,5 +40,3 @@ function max_mult($array) {
 $string_nums = explode(" ", "1 2 3 4");
 echo max_mult($string_nums);
 ?>
-</body>
-</html>
