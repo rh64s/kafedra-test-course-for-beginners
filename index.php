@@ -1,10 +1,3 @@
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Функции в PHP</title>
-</head>
-<body>
-<h1>3. Основы разработки</h1>
 <p>Напишите функцию, которая будет принимать на вход 3 аргумента с типом float и возвращать минимальное значение.</p>
 <?php
 function minimal_3floats(float $a, float $b, float $c)
@@ -59,5 +52,3 @@ function echo_all(int $num) {
 }
 echo_all(30);
 ?>
-</body>
-</html>
