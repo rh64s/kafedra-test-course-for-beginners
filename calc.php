@@ -10,7 +10,6 @@ if (!isset($_GET['x1'], $_GET['x2'])) {
 }
 $x1 = $_GET['x1'];
 $x2 = $_GET['x2'];
-
 if(!(is_numeric($x1) && is_numeric($x2))) {
     return "Впишите числа (пример: 1, 1.5)";
 }
