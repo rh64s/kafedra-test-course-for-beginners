@@ -4,25 +4,22 @@
     <title>3. Основы разработки</title>
 </head>
 <body>
-<p>Создайте массив с тремя уровнями вложенности. После создания массива добавьте новые элементы на самом глубоком уровне вложенности отдельным выражением.</p>
+<p>С помощью цикла while создайте массив, содержащий чётные числа от 345 до 357. Затем выведите элементы массива с помощью цикла foreach.</p>
 <?php
-
-$carsSpeeds = [
-        95,
-        140,
-        78
-];
-
-$sumOfSpeeds = 0;
-$countOfCars=  0;
-foreach ($carsSpeeds as $speed) {
-    $sumOfSpeeds += $speed;
-    $countOfCars++;
+$my_array = [];
+$current_num = 344;
+while (++$current_num and $current_num <= 357) {
+    $my_array[] = $current_num;
 }
-
-$averageSpeed = $sumOfSpeeds / $countOfCars;
-
-echo 'Средняя скорость движения по трассе: ' . $averageSpeed;
+foreach ($my_array as $num) {
+    echo $num, ", ";
+}
 ?>
+
+<p>Запустите следующий код: while (true) {
+    echo 1;
+    }, к чему это привело?</p>
+<?php //while(true) {echo 1;}?>
+<p>это приводит к заполнению документа "1" до тех пор, пока процесс не закончится принудительно</p>
 </body>
 </html>
