@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . ("/setCookies.php");
 ?>
 
 <html lang="ru">
