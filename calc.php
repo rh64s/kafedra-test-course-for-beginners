@@ -5,8 +5,7 @@ if (empty($_GET)) {
 if (empty($_GET['operation'])) {
     return 'Не передана операция';
 }
-if ((empty($_GET['x1']) && $_GET['x1'] != 0)
-    || empty($_GET['x2']) && $_GET['x2'] != 0) {
+if (!isset($_GET['x1'], $_GET['x2'])) {
     return 'Не переданы аргументы';
 }
 $x1 = $_GET['x1'];
@@ -15,7 +14,8 @@ $x2 = $_GET['x2'];
 if(!(is_numeric($x1) && is_numeric($x2))) {
     return "Впишите числа (пример: 1, 1.5)";
 }
-
+$x1 = (float)$x1;
+$x2 = (float)$x2;
 $expression = $x1 . ' ' . $_GET['operation'] . ' ' . $x2 . ' = ';
 switch ($_GET['operation']) {
     case '+':
