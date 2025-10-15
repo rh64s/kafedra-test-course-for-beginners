@@ -1,9 +1,3 @@
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>3. Основы разработки</title>
-</head>
-<body>
 <p>перевести строку в верхний регистр</p>
 <?php
 //echo strtoupper(fgets(STDIN));
@@ -33,5 +27,3 @@ for ($i = count($words)-1; $i >= 0; $i--) {
 }
 echo $current_word;
 ?>
-</body>
-</html>
