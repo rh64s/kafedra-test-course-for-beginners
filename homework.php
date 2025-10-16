@@ -1,23 +1,20 @@
 <?php
-echo "Все комбинации заданной длины", "<br>", "На вход подается строка целых уникальных (не повторяющихся) чисел, разделенных пробелами (elements).
-Следующая строка содержит число элементов в комбинации (k).
-1 ≤ k ≤ количество elements. Найдите все возможные комбинации заданной длины. Выведите их в любом порядке.", "<br>";
-
-$line = "1 2 3";
-$max_len = (int) "2";
-
+$line = "100 95 9 2 42 11 81";
+//$line = "1 2 3 4 5 9 8";
 echo $line, "<br>";
 $line = explode(" ", $line);
-function all_vars($array, $len) {
-    $total = pow(count($array), $len);
-    for ($i = 0; $i < $total; $i++) {
-        $new_array = [];
-        $num = $i;
-        for ($j = 0; $j < $len; $j++) {
-            $new_array[] = $array[$num % count($array)];
-            $num = (int)($num / count($array));
+function max_from_this($array) {
+    for ($i = 0; $i < count($array); $i++) {
+        for ($j = 0; $j < count($array) - $i - 1; $j++) {
+            if (strcmp(($array[$j+1] . $array[$j]), ($array[$j] . $array[$j+1])) > 0) {
+                $mem = $array[$j];
+                $array[$j] = $array[$j+1];
+                $array[$j+1] = $mem;
+            }
         }
-        echo implode(' ', array_reverse($new_array)) . "<br>";
     }
+    $result = implode("", $array);
+    return $result;
 }
-all_vars($line, $max_len);
+echo max_from_this($line);
+?>

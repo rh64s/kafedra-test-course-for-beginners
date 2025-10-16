@@ -1,5 +1,9 @@
 <?php
-if (!empty($_FILES['attachment'])) {
+
+require __DIR__ . '/auth.php';
+$login = getUserLogin();
+
+if ($login !== null && !empty($_FILES['attachment'])) {
     $file = $_FILES['attachment'];
     $filePath = $file['tmp_name'];
 
@@ -40,15 +44,21 @@ if (!empty($_FILES['attachment'])) {
     <title>Загрузка файла</title>
 </head>
 <body>
-<?php if (!empty($error)): ?>
-    <?= $error ?>
-<?php elseif (!empty($result)): ?>
-    <?= $result ?>
+<?php if ($login === null): ?>
+    <p>Чтобы загружать фото <a href="/login.php">авторизуйтесь</a></p>
+    <br>
+<?php else: ?>
+    <?php if (!empty($error)): ?>
+        <?= $error ?>
+    <?php elseif (!empty($result)): ?>
+        <?= $result ?>
+    <?php endif; ?>
+    <br>
+    <a href="/index.php">Назад</a>
+    <form action="/upload.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="attachment">
+        <input type="submit">
+    </form>
 <?php endif; ?>
-<br>
-<form action="/upload.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="attachment">
-    <input type="submit">
-</form>
 </body>
 </html>
