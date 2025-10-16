@@ -28,7 +28,7 @@ switch ($_GET['operation']) {
         break;
     case '/':
         if ($x2 == 0) {
-            return "на ноль делить нельзя!";
+            return "нельзя делить на ноль!";
         }
         $result = $x1 / $x2;
         break;
