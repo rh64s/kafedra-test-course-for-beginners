@@ -1,5 +1,4 @@
 <?php
-
 require __DIR__ . '/auth.php';
 $login = getUserLogin();
 $files = scandir(__DIR__ . '/uploads');
