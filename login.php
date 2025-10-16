@@ -1,5 +1,4 @@
 <?php
-
 $login = !empty($_GET['login']) ? $_GET['login'] : '';
 $password = !empty($_GET['password']) ? $_GET['password'] : '';
 
@@ -13,13 +12,13 @@ if ($login === 'admin') {
     $isAuthorized = [false, "Неверный логин!"];
 }
 ?>
-<html lang="ru">
+<html>
 <head>
     <title>Результат авторизации</title>
 </head>
 <body>
 <p>
-    <?= $isAuthorized[0] ? "Успешно!" : $isAuthorized[1]?>
+    <?= $isAuthorized[0] ? "Успешно прошли!" : $isAuthorized[1]?>
 </p>
 </body>
 </html>
